@@ -5,7 +5,13 @@
 <head>
     <meta charset="utf-8">
     <meta name="keywords" content="Linux学习, 独角兽">
-    <meta name="description" content="">
+    <meta name="description" content="Linux学习网卡设置修改网络初始化设置，设定网卡在系统启动时初始化
+cd /etc/sysconfig/network-scripts
+
+vi ifcfg-ens33
+#到这里已经配置完成，然后重启
+ip a	#查看ip地址确认是否成功
+">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -385,21 +391,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-11-18
+                    2022-11-25
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    0
+                    2.2k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    8 分
                 </div>
                 
 
@@ -422,7 +428,230 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                
+                <h3 id="Linux学习"><a href="#Linux学习" class="headerlink" title="Linux学习"></a>Linux学习</h3><h4 id="网卡设置"><a href="#网卡设置" class="headerlink" title="网卡设置"></a>网卡设置</h4><p>修改网络初始化设置，设定网卡在系统启动时初始化</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">cd</span> /etc/sysconfig/network-scripts
+
+<span class="token function">vi</span> ifcfg-ens33
+<span class="token comment">#到这里已经配置完成，然后重启</span>
+<span class="token function">ip</span> a	<span class="token comment">#查看ip地址确认是否成功</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>ssh连接</p>
+<h4 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h4><h5 id="文件目录操作命令"><a href="#文件目录操作命令" class="headerlink" title="文件目录操作命令"></a>文件目录操作命令</h5><h6 id="more"><a href="#more" class="headerlink" title="more"></a>more</h6><pre class="line-numbers language-none"><code class="language-none">语法：more fileName
+操作说明:
+回车键		#向下滚动一行
+空格键		#向下滚动一屏
+b			#返回上一屏
+q或ctrl+c	#退出more
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h6 id="tail"><a href="#tail" class="headerlink" title="tail"></a>tail</h6><pre class="line-numbers language-none"><code class="language-none">语法：tail [-f] fileName
+说明：-f:动态读取文件末尾内容并显示，通常用于日志文件的内容输出
+举例：
+tail /etc/profile		#显示/etc目录下的profile文件末尾10行的内容
+tail -20 /etc/profile		#显示/etc目录下的profile文件末尾20行的内容
+tail -f /itcast/my.log		#动态读取/itcast目录下的my.log文件末尾内容并显示<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h6 id="mkdir"><a href="#mkdir" class="headerlink" title="mkdir"></a>mkdir</h6><pre class="line-numbers language-none"><code class="language-none">文件目录操作命令mkdir
+作用:创建目录
+语法: mkdir [-p] dirName
+说明:
+-p:确保目录名称存在,不存在的就创建一个。通过此选项,可以实现多层目录同时创建
+举例:
+mkdir itcast 	#在当前目录下,建立一个名为itcast的子目录
+mkdir -p itcast/test 	#在工作目录下的itcast目录中建立一个名为test的子目录,若itcast目录不存在,则建立一个<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<blockquote>
+<p><u><strong>nihao</strong></u></p>
+</blockquote>
+<h6 id="tar"><a href="#tar" class="headerlink" title="tar"></a>tar</h6><pre class="line-numbers language-none"><code class="language-none">作用：打包压缩
+
+使用方法：tar [-zcxvf] filename [files]
+
+filename：生成的文件名
+
+files：要打包的文件
+
+后缀为.tar表示知识完成了打包，并没有压缩
+后缀为.tar.gz表示打包的同时还进行了压缩
+
+说明：
+
+- -z：z代表的是gzip，通过gzio命令处理文件，gzip可以对文件压缩或者解压
+- -c：c代表的是create，创建新的包文件
+- -x：x代表的是extrace，实现从包文件中还原文件
+- -v：v代表的是verbose，显示命令的执行过程
+- -f：f代表的是file，用于指定包文件的名称
+
+实例
+&gt; tar -zxvf hello.tar.gz -C /usr/local	将hello.tar.gz文件进行解压，并将解压后的文件放在/usr/local目录<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<h4 id="查找命令"><a href="#查找命令" class="headerlink" title="查找命令"></a>查找命令</h4><h5 id="find：在指定目录下查找文件"><a href="#find：在指定目录下查找文件" class="headerlink" title="find：在指定目录下查找文件"></a>find：在指定目录下查找文件</h5><p>语法：find dirName -option fileName</p>
+<p>举例</p>
+<ul>
+<li>find . -name “*.java”	在当前目录及其子目录下查找.java文件结尾的文件</li>
+<li>find /itcast -name “*.java”    在/itcast目录及其子目录下查找.java结尾的文件</li>
+</ul>
+<h5 id="grep：从指定文件中查找指定的文本内容"><a href="#grep：从指定文件中查找指定的文本内容" class="headerlink" title="grep：从指定文件中查找指定的文本内容"></a>grep：从指定文件中查找指定的文本内容</h5><p>语法：grep word fileName</p>
+<p>举例：</p>
+<ul>
+<li>grep Hello HelloWorld.java    查找HelloWorld.java中出现的Hello字符串的位置</li>
+<li>grep hello *.java    查找当前目录中所有.java结尾的文件中包含hello字符串的结尾</li>
+</ul>
+<h5 id="ps：查看进程，通过ps-ef可以查看当前运行的所有进程的详细信息"><a href="#ps：查看进程，通过ps-ef可以查看当前运行的所有进程的详细信息" class="headerlink" title="ps：查看进程，通过ps -ef可以查看当前运行的所有进程的详细信息"></a>ps：查看进程，通过ps -ef可以查看当前运行的所有进程的详细信息</h5><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">ps</span> <span class="token parameter variable">-ef</span> <span class="token operator">|</span> <span class="token function">grep</span> tomcat<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>“|”在linux中成为管道符，可以将前一个命令的输出作为后一个命令的输入</p>
+<p>grep用于查看特定进程</p>
+<p>- </p>
+<h3 id="vim编辑器"><a href="#vim编辑器" class="headerlink" title="vim编辑器"></a>vim编辑器</h3><ol>
+<li><p>```bash<br>针对vim中的三种模式说明如下:<br>底行模式</p>
+<ol>
+<li>底行模式下可以通过命令对文件内容进行查找、显示行号、退出等操作</li>
+<li>在命令模式下按下[:,/]任意一个，可以进入底行模式</li>
+<li>通过/方式进入底行模式后，可以对文件内容进行查找</li>
+<li>通过:方式进入底行模式后，可以输入wq（保存并退出)、q!(不保存退出）、 set nu(显示行号)<pre class="line-numbers language-none"><code class="language-none">
+   
+
+#### 安装软件
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre></li>
+</ol>
+</li>
+</ol>
+<p>1.软件安装方式</p>
+<p>2.安装jdk</p>
+<p>3.安装Tomcat</p>
+<p>4.安装MySQL</p>
+<p>5.安装lrzsz：文件上传和下载</p>
+<pre class="line-numbers language-none"><code class="language-none">
+##### 1.软件安装方式
+
+1.二进制发布包安装
+软件已经针对具体平台编译打包发布，只要解压，修改配置即可
+
+2.rpm安装
+软件已经按照redhat的包管理规范进行打包，使用rpm命令进行安装，不能自行解决库依赖问题
+
+3.yum安装
+一种在线软件安装方式，本质上还是rpm安装，自动下载安装包并安装，安装过程中自动解决库依赖问题
+
+4.源码编译安装
+软件以源码工程的形式发布，需要自己编译打包
+
+### xshell上传文件
+
+```bash
+1、先查看上传文件的命令rz是否安装。终端中输入rz，如果提示找不到该命令，就要先执行yum -y install lrzsz命令。
+
+2、在终端中执行rpm -qa|grep lrzsz，查看命令是否安装成功。如果安装成功，就会显示命令的版本信息。否则就不会显示任何内容。
+
+3、安装成功后，可以先切换到保存文件的目录，切换目录的命令是cd。比如我想上传文件到usr目录下，就可以执行命令cd /usr。
+
+4、切换目录后，在终端中输入rz命令，就会弹出对话框。
+
+5、选择需要上传到服务器的文件，点击打开就会开始传输。在窗口中如果出现了“传送完毕”字样，就表示文件上传成功。
+
+6、在终端中执行ls命令，就可以看到已经上传的文件。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="安装MySQL"><a href="#安装MySQL" class="headerlink" title="安装MySQL"></a>安装MySQL</h3><p>RPM（Red-Hat Package Manager）RPM软件包管理工具，是红帽Linux用于管理和按章软件的工具。</p>
+<h4 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h4><pre class="line-numbers language-none"><code class="language-none">1.卸载与mysql冲突的mariadb数据库（centos自带）
+2.安装mysql<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<h4 id="操作"><a href="#操作" class="headerlink" title="操作"></a>操作</h4><h5 id="1-卸载软件"><a href="#1-卸载软件" class="headerlink" title="1.卸载软件"></a>1.卸载软件</h5><p>注意：</p>
+<ol>
+<li>如果安装系统中已经安装有MySQL数据库，安装将失败，</li>
+<li>CentOS自带mariadb，与MySQL数据库冲突，安装也会失败。</li>
+</ol>
+<p>查看是否安装</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">rpm</span> <span class="token parameter variable">-qa</span>	<span class="token comment">#查看安装了什么软件</span>
+<span class="token function">rpm</span> <span class="token parameter variable">-qa</span> <span class="token operator">|</span> <span class="token function">grep</span> mariadb	<span class="token comment">#查看是否安装mariadb</span>
+<span class="token function">rpm</span> <span class="token parameter variable">-qa</span> <span class="token operator">|</span> <span class="token function">grep</span> mysql	<span class="token comment">#查看是否安装mysql</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p>开始卸载</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">rpm</span> <span class="token parameter variable">-e</span> <span class="token parameter variable">--nodeps</span> 软件名称	<span class="token comment">#卸载软件命令</span>
+<span class="token function">rpm</span> <span class="token parameter variable">-e</span> <span class="token parameter variable">--nodeps</span> mariadb-libs-5.5.60-1.el7_5.x86_64	<span class="token comment">#卸载mariadb</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>遇到某些软件弹出无法运行，其实是缺少c++运行环境</p>
+<p><a target="_blank" rel="noopener" href="https://www.aliyundrive.com/s/WLnhdAdwCzh">软件下载</a></p>
+<h5 id="2-开始安装"><a href="#2-开始安装" class="headerlink" title="2.开始安装"></a>2.开始安装</h5><ol>
+<li>上传mysql安装包</li>
+</ol>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">yum <span class="token function">install</span> lrzsz	<span class="token comment">#安装上传文件的工具</span>
+rz <span class="token parameter variable">-be</span>	<span class="token comment">#输入rz上传文件。参数说明-b, –binary 用binary的方式上传下载；-e, –escape 强制escape 所有控制字符</span>
+<span class="token function">mkdir</span> /usr/local/mysql	<span class="token comment">#创建mysql文件夹</span>
+<span class="token function">mv</span> mysql* /usr/local/mysql <span class="token comment">#将mysql压缩包移动到mysql文件夹里</span>
+<span class="token function">tar</span> <span class="token parameter variable">-zxvf</span> mysql* <span class="token parameter variable">-C</span> /usr/local/mysql	 <span class="token comment">#将压缩包解压到刚刚创建的文件夹里</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<ol start="2">
+<li>按照顺序安装mysql（因为有依赖问题，所以要按顺序安装）</li>
+</ol>
+<pre class="line-numbers language-none"><code class="language-none">rpm -ivh mysql-community-common-5.7.25-1.el7.x86_64.rpm
+rpm -ivh  mysql-community-libs-5.7.25-1.el7.x86_64.rpm
+rpm -ivh mysql-community-devel-5.7.25-1.el7.x86_64.rpm
+rpm -ivh mysql-community-libs-compat-5.7.25-1.el7.x86_64.rpm
+rpm -ivh mysql-community-client-5.7.25-1.el7.x86_64.rpm
+yum install net-tools
+rpm -ivh mysql-community-server-5.7.25-1.el7.x86_64.rpm
+
+
+#下面这步跟安装mysql无关，用于升级现有软件及系统内核，亲测使用完后依旧可以使用mysql
+yum update<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>2.1 其中我按照顺序依旧报错，在安装最后一个serve包的时候报错&gt; &gt; </p>
+<blockquote>
+<p>warning: mysql-community-server-5.7.25-1.el7.x86_64.rpm: Header V3 DSA/SHA1 Signature, key ID 5072e1f5: NOKEY这个错误，</p>
+</blockquote>
+<p>这是因为yum安装了旧版本的GPG keys造成的 </p>
+<p>解决办法：后面加上 –force –nodeps </p>
+<pre class="line-numbers language-none"><code class="language-none">rpm -ivh mysql-community-server-5.7.25-1.el7.x86_64.rpm --force --nodeps<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<ol start="3">
+<li>启动mysql</li>
+</ol>
+<pre class="line-numbers language-none"><code class="language-none">systemctl status mysqld		#查看mysql服务状态
+systemctl start mysqld		#启动mysql服务<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>可以设置开机时自动启动MySQL服务，避免每次开机启动mysql</p>
+<pre class="line-numbers language-none"><code class="language-none">systemctl enable mysqld		#开机启动mysql服务<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<pre class="line-numbers language-none"><code class="language-none">netstat -tunlp		#查看已经启动的服务(需要安装net-tools工具之后才可以使用)
+netstat -tunlp | grep mysql	#通过管道符查看mysql服务是否启动
+
+ps -ef | grep mysql		#查看mysql的进程<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>4.登录mysql，查阅临时密码</p>
+<p>因为第一次启动，所以还没有设置密码，所以mysql提供了临时密码。接下来通过命令查看临时密码</p>
+<pre class="line-numbers language-none"><code class="language-none">cat /var/log/mysqld.log		#查看文件内容
+cat /var/log/mysqld.log | grep password<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>修改密码</p>
+<pre class="line-numbers language-none"><code class="language-none">mysql -uroot -p		#登录mysql，使用临时密码登录
+#修改密码
+set global validate_password_length=4;	#设置密码长度最低位数
+set global validate_password_policy=LOW;	#设置密码安全等级低，便于密码可以修改成root
+set password=password('root');	#设置密码为root
+#开启访问权限
+grant all on *.* to 'root'@'%'identified by 'root';	#%意味着所有ip都可以访问(这里是5.0的mysql，8.0的跟这个不一样)
+flush privileges;
+
+#MySQL8.0
+CREAT USER 'root'@'%'idendified by 'root';
+grant all privileges on *.* to 'root'@'%';<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<h3 id="防火墙"><a href="#防火墙" class="headerlink" title="防火墙"></a>防火墙</h3><h4 id="windows远程连接Linux的Redis"><a href="#windows远程连接Linux的Redis" class="headerlink" title="windows远程连接Linux的Redis"></a>windows远程连接Linux的Redis</h4><p>开放8080端口</p>
+<pre class="line-numbers language-none"><code class="language-none">firewall-cmd --zone=public --add-port=80/tcp --permanen<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>开放端口之后还要使用reload使其生效。</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">firewall-cmd <span class="token parameter variable">--reload</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>相关命令</p>
+<pre class="line-numbers language-none"><code class="language-none">systemctl stop firewalld	#暂时关闭防火墙
+systemctl disable firewalld		#永久关闭防火墙
+systemctl status firewalld		#查看防火墙状态<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+
                 
             </div>
             <hr/>
@@ -1090,7 +1319,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">6.3k</span>
+                        class="white-color">8.3k</span>
             
             
             

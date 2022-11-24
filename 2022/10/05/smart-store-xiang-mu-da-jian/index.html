@@ -389,21 +389,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-11-18
+                    2022-11-24
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    3.5k
+                    2.7k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    15 分
+                    12 分
                 </div>
                 
 
@@ -782,198 +782,140 @@ redisTemplate.opsForValue().set(phone,code,5,TimeUnit.MINUTES);
 <h4 id="2-static静态资源无法加载"><a href="#2-static静态资源无法加载" class="headerlink" title="2.static静态资源无法加载"></a>2.static静态资源无法加载</h4><p>1.只要继承WebConfigSupport就会使SpringBoot默认配置的拦截器失效</p>
 <p>WebMvcConfig继承WebMvcConfigSupport导致SpringBoot中拦截器失效</p>
 <p><a target="_blank" rel="noopener" href="http://101.201.238.197/backend/page/login/login.html">项目链接</a>已失效</p>
-<h2 id="Git学习"><a href="#Git学习" class="headerlink" title="Git学习"></a>Git学习</h2><p>三个区</p>
-<pre class="line-numbers language-none"><code class="language-none">工作区
-暂存区
-版本库<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
-<p>文件状态</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">未跟踪（untracked）
-已跟踪： 
-	未修改<span class="token punctuation">(</span>unmodifly<span class="token punctuation">)</span>
-	已修改<span class="token punctuation">(</span>modify<span class="token punctuation">)</span>
-	已跟踪（git显示new file）	<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>四个方面</p>
-<p>1.本地仓库</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> <span class="token function">add</span>			<span class="token comment">#将工作区的文件提交到暂存区</span>
-<span class="token function">git</span> commit <span class="token parameter variable">-m</span> <span class="token string">"第一次提交"</span> 我的文件			<span class="token comment">#将暂存区的文件提交到版本库</span>
-<span class="token function">git</span> status		<span class="token comment">#查看文件状态。</span>
-<span class="token function">git</span> log	<span class="token comment">#查看日志</span>
-<span class="token function">git</span> reset <span class="token parameter variable">--hard</span> 版本号 	<span class="token comment">#版本回退。版本号可以从log中获取</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>2.远程仓库</p>
-<pre class="line-numbers language-none"><code class="language-none">git remote	#查看是否关联了远程仓库
-git remote -v #查看具体远程仓库
-git remote add	#添加远程仓库
-git push	#从远程仓库推送（上传）代码
-git pull	#从远程仓库拉取代码
-git clone	#从远程仓库克隆代码<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>3.分支（branch）</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> branch	<span class="token comment">#查看分支</span>
-<span class="token function">git</span> branch 分支名	<span class="token comment">#创建分支</span>
-<span class="token function">git</span> checkout 分支名	<span class="token comment">#切换分支</span>
-<span class="token function">git</span> merge 分支名	<span class="token comment">#将当前分支与分支名合并</span>
-<span class="token function">git</span> push 分支名	<span class="token comment">#推送分支</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>4.标签（tag）</p>
-<pre class="line-numbers language-none"><code class="language-none">git tag	#查看标签
-git tag 标签名	#创建标签
-git checkout -b 分支名 标签名	#要切换标签必须创建分支
-git push	#将标签上传<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="读写分离"><a href="#读写分离" class="headerlink" title="读写分离"></a>读写分离</h4><p>数据库主从复制</p>
+<h5 id="思路-1"><a href="#思路-1" class="headerlink" title="思路"></a>思路</h5><pre class="line-numbers language-none"><code class="language-none">1.主库，更改my.cnf文件，添加用户
+2.从库，更改my.cnf文件，与主库相连<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
 
 
-<h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3><ol>
-<li>git push推送失败</li>
-</ol>
-<h4 id="1-思路"><a href="#1-思路" class="headerlink" title="1.思路"></a>1.思路</h4><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">先pull下来再push<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<h4 id="2-解决过程"><a href="#2-解决过程" class="headerlink" title="2.解决过程"></a>2.解决过程</h4><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">提示说pull下来再推送就好了
-
-<span class="token operator">&gt;</span> <span class="token function">git</span> pull origin master
-
-然后依然报错
-
-<span class="token operator">&gt;</span>fatal: refusing to merge unrelated histories
-
-在后面添加参数就好了
-
-<span class="token operator">&gt;</span> <span class="token function">git</span> pull origin master --allow-unrelated-histories
-
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h4 id="3-快捷解决"><a href="#3-快捷解决" class="headerlink" title="3.快捷解决"></a>3.快捷解决</h4><p>输入下面两行指令</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> pull origin master --allow-unrelated-histories
-<span class="token function">git</span> push origin master<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-<h4 id="4-报错原因"><a href="#4-报错原因" class="headerlink" title="4.报错原因"></a>4.报错原因</h4><p>如果当前本地仓库不是从远程仓库克隆，而是本地创建的仓库，并且仓库中存在文件，此时再从远程仓库拉取文件的时候会报错</p>
-<blockquote>
-<p>（fatal: refusing to merge unrelated histories）</p>
-</blockquote>
-<h2 id="Linux学习"><a href="#Linux学习" class="headerlink" title="Linux学习"></a>Linux学习</h2><p>网卡设置</p>
-<p>ssh连接</p>
-<h3 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h3><h4 id="tar"><a href="#tar" class="headerlink" title="tar"></a>tar</h4><p>作用：打包压缩</p>
-<p>使用方法：tar [-zcxvf] filename [files]</p>
-<p>filename：生成的文件名</p>
-<p>files：要打包的文件</p>
-<p>后缀为.tar表示知识完成了打包，并没有压缩<br>后缀为.tar.gz表示打包的同时还进行了压缩</p>
-<p>说明：</p>
-<ul>
-<li>-z：z代表的是gzip，通过gzio命令处理文件，gzip可以对文件压缩或者解压</li>
-<li>-c：c代表的是create，创建新的包文件</li>
-<li>-x：x代表的是extrace，实现从包文件中还原文件</li>
-<li>-v：v代表的是verbose，显示命令的执行过程</li>
-<li>-f：f代表的是file，用于指定包文件的名称</li>
-</ul>
-<p>实例</p>
-<blockquote>
-<p>tar -zxvf hello.tar.gz -C /usr/local	将hello.tar.gz文件进行解压，并将解压后的文件放在/usr/local目录</p>
-</blockquote>
-<h4 id="查找命令"><a href="#查找命令" class="headerlink" title="查找命令"></a>查找命令</h4><h5 id="find：在指定目录下查找文件"><a href="#find：在指定目录下查找文件" class="headerlink" title="find：在指定目录下查找文件"></a>find：在指定目录下查找文件</h5><p>语法：find dirName -option fileName</p>
-<p>举例</p>
-<ul>
-<li>find . -name “*.java”	在当前目录及其子目录下查找.java文件结尾的文件</li>
-<li>find /itcast -name “*.java”    在/itcast目录及其子目录下查找.java结尾的文件</li>
-</ul>
-<h5 id="grep：从指定文件中查找指定的文本内容"><a href="#grep：从指定文件中查找指定的文本内容" class="headerlink" title="grep：从指定文件中查找指定的文本内容"></a>grep：从指定文件中查找指定的文本内容</h5><p>语法：grep word fileName</p>
-<p>举例：</p>
-<ul>
-<li>grep Hello HelloWorld.java    查找HelloWorld.java中出现的Hello字符串的位置</li>
-<li>grep hello *.java    查找当前目录中所有.java结尾的文件中包含hello字符串的结尾</li>
-</ul>
-<h5 id="ps：查看进程，通过ps-ef可以查看当前运行的所有进程的详细信息"><a href="#ps：查看进程，通过ps-ef可以查看当前运行的所有进程的详细信息" class="headerlink" title="ps：查看进程，通过ps -ef可以查看当前运行的所有进程的详细信息"></a>ps：查看进程，通过ps -ef可以查看当前运行的所有进程的详细信息</h5><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">ps</span> <span class="token parameter variable">-ef</span> <span class="token operator">|</span> <span class="token function">grep</span> tomcat<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>“|”在linux中成为管道符，可以将前一个命令的输出作为后一个命令的输入</p>
-<p>grep用于查看特定进程</p>
-<p>- </p>
-<h3 id="vim编辑器"><a href="#vim编辑器" class="headerlink" title="vim编辑器"></a>vim编辑器</h3><ol>
-<li><p>```bash<br>针对vim中的三种模式说明如下:<br>底行模式</p>
 <ol>
-<li>底行模式下可以通过命令对文件内容进行查找、显示行号、退出等操作</li>
-<li>在命令模式下按下[:,/]任意一个，可以进入底行模式</li>
-<li>通过/方式进入底行模式后，可以对文件内容进行查找</li>
-<li>通过:方式进入底行模式后，可以输入wq（保存并退出)、q!(不保存退出）、 set nu(显示行号)<pre class="line-numbers language-none"><code class="language-none">
-   
+<li><h6 id="开启数据库二进制日志功能"><a href="#开启数据库二进制日志功能" class="headerlink" title="开启数据库二进制日志功能"></a>开启数据库二进制日志功能</h6></li>
+</ol>
+<p>修改MySQL数据库配置文件/etc/my.cnf</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token punctuation">[</span>mysqld<span class="token punctuation">]</span>
+log-bin<span class="token operator">=</span>mysql-bin	<span class="token comment">#启用二进制日志</span>
+server-id<span class="token operator">=</span><span class="token number">100</span>	<span class="token comment">#服务器唯一ID</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
-#### 安装软件
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre></li>
+<ol start="2">
+<li><h6 id="重启mysql服务"><a href="#重启mysql服务" class="headerlink" title="重启mysql服务"></a>重启mysql服务</h6></li>
 </ol>
-</li>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">systemctl restart mysqld<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<ol start="3">
+<li><h6 id="创建用户"><a href="#创建用户" class="headerlink" title="创建用户"></a>创建用户</h6></li>
 </ol>
-<p>1.软件安装方式</p>
-<p>2.安装jdk</p>
-<p>3.安装Tomcat</p>
-<p>4.安装MySQL</p>
-<p>5.安装lrzsz：文件上传和下载</p>
+<pre class="line-numbers language-none"><code class="language-none">GRANT REPLICATION SLAVE ON *.* to 'unicorn'@'%'identified by 'root@123456';<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>说明：slave必须被master授权具有该权限的用户，才能通过该用户复制。</p>
+<p>my.cnf文件写错了的解决办法</p>
+<p>解决思路</p>
+<pre class="line-numbers language-none"><code class="language-none">1.查看/etc/log/
+2.修改重启<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+
+
 <pre class="line-numbers language-none"><code class="language-none">
-##### 1.软件安装方式
+搞了半天，启动mysql服务失败，最后发现原因是在配置my.cnf文件的时候写错了，将=写成-，mysql无法识别。解决办法是，删了重新启动，然后再添加进去
 
-1.二进制发布包安装
-软件已经针对具体平台编译打包发布，只要解压，修改配置即可
+如果直接更改，反正我更改完之后依然不能使用，最后删掉重来才成功的。
+还是不行，发现配置信息写错了。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-2.rpm安装
-软件已经按照redhat的包管理规范进行打包，使用rpm命令进行安装，不能自行解决库依赖问题
+<p>查看master状态</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">show master status<span class="token punctuation">;</span>		<span class="token comment">#sql语句	</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-3.yum安装
-一种在线软件安装方式，本质上还是rpm安装，自动下载安装包并安装，安装过程中自动解决库依赖问题
+<p>执行完命令后不要再执行其他操作。保证file和position不变</p>
+<h6 id="4-配置从库"><a href="#4-配置从库" class="headerlink" title="4.配置从库"></a>4.配置从库</h6><p>接下来到从库中配置mysql</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">server-id<span class="token operator">=</span><span class="token number">101</span> <span class="token comment">#[必须]服务器唯一ID</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-4.源码编译安装
-软件以源码工程的形式发布，需要自己编译打包
+<p>登录mysql数据库，执行下列sql</p>
+<pre class="line-numbers language-none"><code class="language-none">change master to master_host='192.168.217.144',master_user='unicorn',master_password='root@123456',master_log_file='mysql-bin.000001',master_log_pos=154;
 
-### xshell上传文件
+start slave;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
-```bash
-1、先查看上传文件的命令rz是否安装。终端中输入rz，如果提示找不到该命令，就要先执行yum -y install lrzsz命令。
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">show slave status<span class="token punctuation">;</span>		<span class="token comment">#展示从库状态</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-2、在终端中执行rpm -qa|grep lrzsz，查看命令是否安装成功。如果安装成功，就会显示命令的版本信息。否则就不会显示任何内容。
+<p>显示会有一大串，将其复制到文本编辑器（我用的vscode中）就会便于观看了。</p>
+<p>确保其中slave_IO_Runing和slave_SQL_Runing的状态为yes，这样就说明配置主从库成功了。</p>
+<h5 id="在项目中配置主库分离（sharding-jdbc）"><a href="#在项目中配置主库分离（sharding-jdbc）" class="headerlink" title="在项目中配置主库分离（sharding-jdbc）"></a>在项目中配置主库分离（sharding-jdbc）</h5><p>将原来项目中的数据导入主库中</p>
+<p>1.配置数据库</p>
+<p>我通过navicat转储的sql文件，但是在通过navicat写入数据库中失败了，最后通过cmd连接虚拟机中mysql，使用source命令成功了。</p>
+<p>在连接数据库的时候报ssl错误，添加下面的参数即可成功</p>
+<pre class="line-numbers language-none"><code class="language-none">mysql -h 192.168.217.144 -uroot -proot --ssl-mode=DISABLED<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-3、安装成功后，可以先切换到保存文件的目录，切换目录的命令是cd。比如我想上传文件到usr目录下，就可以执行命令cd /usr。
+<p>2.导入pom文件</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span>        配置主从复制shardingjdbc<span class="token operator">--</span><span class="token operator">&gt;</span>
+        <span class="token generics"><span class="token punctuation">&lt;</span>dependency<span class="token punctuation">&gt;</span></span>
+            <span class="token generics"><span class="token punctuation">&lt;</span>groupId<span class="token punctuation">&gt;</span></span>org<span class="token punctuation">.</span>apache<span class="token punctuation">.</span>shardingsphere<span class="token operator">&lt;</span><span class="token operator">/</span>groupId<span class="token operator">&gt;</span>
+            <span class="token generics"><span class="token punctuation">&lt;</span>artifactId<span class="token punctuation">&gt;</span></span>sharding<span class="token operator">-</span>jdbc<span class="token operator">-</span>spring<span class="token operator">-</span>boot<span class="token operator">-</span>starter<span class="token operator">&lt;</span><span class="token operator">/</span>artifactId<span class="token operator">&gt;</span>
+            <span class="token generics"><span class="token punctuation">&lt;</span>version<span class="token punctuation">&gt;</span></span><span class="token number">4.0</span><span class="token number">.0</span><span class="token operator">-</span><span class="token constant">RC1</span><span class="token operator">&lt;</span><span class="token operator">/</span>version<span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span><span class="token operator">/</span>dependency<span class="token operator">&gt;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-4、切换目录后，在终端中输入rz命令，就会弹出对话框。
+<p>3.配置yml文件</p>
+<p>黏贴的时候注意缩进</p>
+<pre class="line-numbers language-none"><code class="language-none">  #主从复制
+shardingsphere:
+  datasource:
+    names:
+      master,slave
+    # 主数据源
+    master:
+      type: com.alibaba.druid.pool.DruidDataSource
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://192.168.217.144:3306/smart-store?characterEncoding=utf-8
+      username: root
+      password: root
+    # 从数据源
+    slave:
+      type: com.alibaba.druid.pool.DruidDataSource
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://192.168.217.145:3306/smart-store?characterEncoding=utf-8
+      username: root
+      password: root
+  masterslave:
+    # 读写分离配置
+    load-balance-algorithm-type: round_robin
+    # 最终的数据源名称
+    name: dataSource
+    # 主库数据源名称
+    master-data-source-name: master
+    # 从库数据源名称列表，多个逗号分隔
+    slave-data-source-names: slave
+  props:
+    sql:
+      show: true #开启SQL显示，默认false
+main:
+  allow-bean-definition-overriding: true<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-5、选择需要上传到服务器的文件，点击打开就会开始传输。在窗口中如果出现了“传送完毕”字样，就表示文件上传成功。
+<h4 id="Nginx学习（Linux环境）"><a href="#Nginx学习（Linux环境）" class="headerlink" title="Nginx学习（Linux环境）"></a>Nginx学习（Linux环境）</h4><p>思路</p>
+<p>安装过程</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token number">1</span>.yum <span class="token parameter variable">-y</span> <span class="token function">install</span> gcc pcre-devel zlib-devel openssl openssl-devel	<span class="token comment">#安装依赖包 </span>
+<span class="token number">2</span>.weget http://nginx.org/download/nginx-1.16.1.tar.gz	<span class="token comment">#下载Nginx安装包</span>
+<span class="token number">3</span>.tar <span class="token parameter variable">-zxvf</span> nginx-1.16.1.tar.gz		<span class="token comment">#解压</span>
+<span class="token number">4</span>.cd nginx-1.16.1
+<span class="token number">5</span><span class="token punctuation">..</span>/configure <span class="token parameter variable">--prefix</span><span class="token operator">=</span>/usr/local/nginx
+<span class="token number">6</span>.make <span class="token operator">&amp;&amp;</span> <span class="token function">make</span> <span class="token function">install</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-6、在终端中执行ls命令，就可以看到已经上传的文件。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">yum <span class="token function">install</span> tree		<span class="token comment">#安装文件目录树形结构查看</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<h3 id="安装MySQL"><a href="#安装MySQL" class="headerlink" title="安装MySQL"></a>安装MySQL</h3><h4 id="1-检测当前系统中是否安装MySQL数据库"><a href="#1-检测当前系统中是否安装MySQL数据库" class="headerlink" title="1.检测当前系统中是否安装MySQL数据库"></a>1.检测当前系统中是否安装MySQL数据库</h4><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">rpm</span> <span class="token parameter variable">-qa</span>
-<span class="token function">rpm</span> <span class="token parameter variable">-qa</span> <span class="token operator">|</span> <span class="token function">grep</span> mysql
-<span class="token function">rpm</span> <span class="token parameter variable">-qa</span> <span class="token operator">|</span> <span class="token function">grep</span> mariadb<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">sbin/nginx <span class="token parameter variable">-v</span>	<span class="token comment">#检查版本</span>
+sbin/nginx <span class="token parameter variable">-t</span>	<span class="token comment">#检查配置文件正确性</span>
+<span class="token comment">#启动和停止</span>
+./nginx		<span class="token comment">#启动nginx</span>
+./nginx	<span class="token parameter variable">-s</span> stop 	<span class="token comment">#停止nginx</span>
+<span class="token function">ps</span> <span class="token parameter variable">-ef</span> <span class="token operator">|</span> <span class="token function">grep</span> nginx		<span class="token comment">#启动完成后通过此命令查看nginx进程</span>
+<span class="token comment">#配置文件</span>
+./nginx <span class="token parameter variable">-s</span> reload	<span class="token comment">#修改配置文件后，需要重新加载才能生效</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p>RPM（Red-Hat Package Manager）RPM软件包管理工具，是红帽Linux用于管理和按章软件的工具。</p>
-<p>注意：<br>如果安装系统中已经安装有MySQL数据库，安装将失败，CentOS自带mariadb，与MySQL数据库冲突。</p>
-<h4 id="2-卸载软件"><a href="#2-卸载软件" class="headerlink" title="2.卸载软件"></a>2.卸载软件</h4><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">rpm</span> <span class="token parameter variable">-e</span> <span class="token parameter variable">--nodeps</span> 软件名称
-<span class="token function">rpm</span> <span class="token parameter variable">-e</span> <span class="token parameter variable">--nodeps</span> mariadb-libs-5.5.60-1.el7_5.x86_64<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>添加到环境变量</p>
+<pre class="line-numbers language-none"><code class="language-none">vim /etc/profile
+PATH=/usr/local/nginx/sbin
+source /etc/profile
 
-<p>遇到某些软件弹出无法运行，其实是缺少c++运行环境</p>
-<p><a target="_blank" rel="noopener" href="https://www.aliyundrive.com/s/WLnhdAdwCzh">软件下载</a></p>
-<h3 id="防火墙"><a href="#防火墙" class="headerlink" title="防火墙"></a>防火墙</h3><h4 id="windows远程连接Linux的Redis"><a href="#windows远程连接Linux的Redis" class="headerlink" title="windows远程连接Linux的Redis"></a>windows远程连接Linux的Redis</h4><p>开放8080端口</p>
-<pre class="line-numbers language-none"><code class="language-none">firewall-cmd --zone=public --add-port=9090/tcp --permanen<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+#遇到的问题
+添加完环境变量之后，大部分命令使用不了了。
+解决办法：修改profile文件，将path修改成下列
+PATH/usr/local/nginx/sbin:$PATH<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p>开放端口之后还要使用reload使其生效。</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">firewall-cmd <span class="token parameter variable">--reload</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-
-
-
-
-<h3 id="Redis学习"><a href="#Redis学习" class="headerlink" title="Redis学习"></a>Redis学习</h3><p>字符串string操作命令</p>
-<ul>
-<li>set key value    设置key-value（如果key一致，则会覆盖之前的）</li>
-<li>get key    获取value</li>
-<li>setex key seconds value    一段时间后清除key-value</li>
-<li>setnx key value    当key不存在时设置值（如果key已经存在则设置不了值）</li>
-</ul>
-<p>哈希hash操作命令</p>
-<ul>
-<li>HSET key field value    将哈希表key中的字段field的值设为value</li>
-<li>HGET key field    获取指定key，field的值</li>
-<li>HDEL key field    删除指定key，field的值</li>
-<li>HKEYS key    获取所有字段</li>
-<li>HVALS key    获取所有值</li>
-<li>HGETALL key    获取所有字段所有值</li>
-</ul>
 
                 
             </div>
@@ -1642,7 +1584,7 @@ git push	#将标签上传<span aria-hidden="true" class="line-numbers-rows"><spa
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">6.3k</span>
+                        class="white-color">8.3k</span>
             
             
             
