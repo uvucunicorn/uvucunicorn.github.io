@@ -451,22 +451,31 @@ tail /etc/profile		#显示/etc目录下的profile文件末尾10行的内容
 tail -20 /etc/profile		#显示/etc目录下的profile文件末尾20行的内容
 tail -f /itcast/my.log		#动态读取/itcast目录下的my.log文件末尾内容并显示<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h6 id="mkdir"><a href="#mkdir" class="headerlink" title="mkdir"></a>mkdir</h6><pre class="line-numbers language-none"><code class="language-none">文件目录操作命令mkdir
-作用:创建目录
-语法: mkdir [-p] dirName
-说明:
--p:确保目录名称存在,不存在的就创建一个。通过此选项,可以实现多层目录同时创建
-举例:
-mkdir itcast 	#在当前目录下,建立一个名为itcast的子目录
-mkdir -p itcast/test 	#在工作目录下的itcast目录中建立一个名为test的子目录,若itcast目录不存在,则建立一个<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>mkdir</p>
-<blockquote>
+<h6 id="mkdir"><a href="#mkdir" class="headerlink" title="mkdir"></a>mkdir</h6><blockquote>
 <ol>
 <li>文件目录操作命令mkdir</li>
 <li>作用:创建目录</li>
 <li>语法: mkdir [-p] dirName</li>
-<li>说明:<br>-p:确保目录名称存在,不存在的就创建一个。通过此选项,可以实现多层目录同时创建<br>举例:<br>mkdir itcast 	#在当前目录下,建立一个名为itcast的子目录<br>mkdir -p itcast/test 	#在工作目录下的itcast目录中建立一个名为test的子目录,若itcast目录不存在,则建立一个</li>
+<li>说明:<br>-p:确保目录名称存在,不存在的就创建一个。通过此选项,<u>可以实现多层目录同时创建</u><br>举例:<br>mkdir itcast 	#在当前目录下,建立一个名为itcast的子目录<br>mkdir -p itcast/test 	#在工作目录下的itcast目录中建立一个名为test的子目录,若itcast目录不存在,则建立一个</li>
+</ol>
+</blockquote>
+<p>rm</p>
+<blockquote>
+<ol>
+<li><p>文件目录操作命令rmdir</p>
+</li>
+<li><p>作用:删除空目录</p>
+</li>
+<li><p>语法: rmdir [-p] dirName</p>
+</li>
+<li><p>说明:</p>
+<p>-p:当子目录被删除后使父目录为空目录的话,则一并删除</p>
+</li>
+<li><p>举例:</p>
+<p>rmdir itcast 删除名为itcast的空目录</p>
+<p>rmdir -p itcast/test 删除itcast目录中名为test的子目录,若test目录删除后itcast目录变为空目录,则也被删除</p>
+<p>rmdir itcast* 删除名称以itcast开始的空目录</p>
+</li>
 </ol>
 </blockquote>
 <h6 id="tar"><a href="#tar" class="headerlink" title="tar"></a>tar</h6><pre class="line-numbers language-none"><code class="language-none">作用：打包压缩
