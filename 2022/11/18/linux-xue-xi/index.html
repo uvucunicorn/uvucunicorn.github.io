@@ -391,21 +391,21 @@ ip a	#查看ip地址确认是否成功
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-11-25
+                    2022-12-08
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2.3k
+                    2.5k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    9 分
+                    10 分
                 </div>
                 
 
@@ -436,7 +436,9 @@ ip a	#查看ip地址确认是否成功
 <span class="token function">ip</span> a	<span class="token comment">#查看ip地址确认是否成功</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>ssh连接</p>
-<h4 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h4><h5 id="文件目录操作命令"><a href="#文件目录操作命令" class="headerlink" title="文件目录操作命令"></a>文件目录操作命令</h5><h6 id="more"><a href="#more" class="headerlink" title="more"></a>more</h6><pre class="line-numbers language-none"><code class="language-none">语法：more fileName
+<h4 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h4><h5 id="文件目录操作命令"><a href="#文件目录操作命令" class="headerlink" title="文件目录操作命令"></a>文件目录操作命令</h5><h6 id="touch"><a href="#touch" class="headerlink" title="touch"></a>touch</h6><pre class="line-numbers language-none"><code class="language-none">touch：创建一个空白的文本文件<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h6 id="more"><a href="#more" class="headerlink" title="more"></a>more</h6><pre class="line-numbers language-none"><code class="language-none">语法：more fileName
 操作说明:
 回车键		#向下滚动一行
 空格键		#向下滚动一屏
@@ -451,33 +453,41 @@ tail /etc/profile		#显示/etc目录下的profile文件末尾10行的内容
 tail -20 /etc/profile		#显示/etc目录下的profile文件末尾20行的内容
 tail -f /itcast/my.log		#动态读取/itcast目录下的my.log文件末尾内容并显示<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h6 id="mkdir"><a href="#mkdir" class="headerlink" title="mkdir"></a>mkdir</h6><blockquote>
-<ol>
-<li>文件目录操作命令mkdir</li>
-<li>作用:创建目录</li>
-<li>语法: mkdir [-p] dirName</li>
-<li>说明:<br>-p:确保目录名称存在,不存在的就创建一个。通过此选项,<u>可以实现多层目录同时创建</u><br>举例:<br>mkdir itcast 	#在当前目录下,建立一个名为itcast的子目录<br>mkdir -p itcast/test 	#在工作目录下的itcast目录中建立一个名为test的子目录,若itcast目录不存在,则建立一个</li>
-</ol>
-</blockquote>
-<p>rm</p>
-<blockquote>
-<ol>
-<li><p>文件目录操作命令rmdir</p>
-</li>
-<li><p>作用:删除空目录</p>
-</li>
-<li><p>语法: rmdir [-p] dirName</p>
-</li>
-<li><p>说明:</p>
-<p>-p:当子目录被删除后使父目录为空目录的话,则一并删除</p>
-</li>
-<li><p>举例:</p>
-<p>rmdir itcast 删除名为itcast的空目录</p>
-<p>rmdir -p itcast/test 删除itcast目录中名为test的子目录,若test目录删除后itcast目录变为空目录,则也被删除</p>
-<p>rmdir itcast* 删除名称以itcast开始的空目录</p>
-</li>
-</ol>
-</blockquote>
+<h6 id="mkdir"><a href="#mkdir" class="headerlink" title="mkdir"></a>mkdir</h6><pre class="line-numbers language-none"><code class="language-none">1. 文件目录操作命令mkdir
+2. 作用:创建目录
+3. 语法: mkdir [-p] dirName
+4. 说明:
+   -p:确保目录名称存在,不存在的就创建一个。通过此选项,&lt;u&gt;可以实现多层目录同时创建&lt;/u&gt;
+   举例:
+   mkdir itcast 	#在当前目录下,建立一个名为itcast的子目录
+   mkdir -p itcast/test 	#在工作目录下的itcast目录中建立一个名为test的子目录,若itcast目录不存在,则建立一个<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h6 id="rm"><a href="#rm" class="headerlink" title="rm"></a>rm</h6><pre class="line-numbers language-none"><code class="language-none">1. 文件目录操作命令rmdir
+
+2. 作用:删除空目录
+
+3. 语法: rmdir [-p] dirName
+
+4. 说明:
+
+   -p:当子目录被删除后使父目录为空目录的话,则一并删除
+   -r:删除文件夹
+   -f:强制删除文件，不会弹出提示
+   
+rm命令支持通配符*，用来做模糊匹配
+符号*表示通配符，即匹配任意内容（包含空），示例：
+test*:表示匹配任何以test开头的内容
+*test:表示匹配任何以test结尾的内容
+*test*:表示匹配任何包含test的内容
+
+5. 举例:
+
+   rmdir itcast 删除名为itcast的空目录
+
+   rmdir -p itcast/test 删除itcast目录中名为test的子目录,若test目录删除后itcast目录变为空目录,则也被删除
+
+   rmdir itcast* 删除名称以itcast开始的空目录<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <h6 id="tar"><a href="#tar" class="headerlink" title="tar"></a>tar</h6><pre class="line-numbers language-none"><code class="language-none">作用：打包压缩
 
 使用方法：tar [-zcxvf] filename [files]
@@ -568,11 +578,20 @@ files：要打包的文件
 
 6、在终端中执行ls命令，就可以看到已经上传的文件。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h3 id="安装MySQL"><a href="#安装MySQL" class="headerlink" title="安装MySQL"></a>安装MySQL</h3><p>RPM（Red-Hat Package Manager）RPM软件包管理工具，是红帽Linux用于管理和按章软件的工具。</p>
-<h4 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h4><pre class="line-numbers language-none"><code class="language-none">1.卸载与mysql冲突的mariadb数据库（centos自带）
+<h4 id="安装jdk"><a href="#安装jdk" class="headerlink" title="安装jdk"></a>安装jdk</h4><pre class="line-numbers language-none"><code class="language-none">操作步骤:
+1、使用FinalShell自带的上传工具将jdk的二进制发布包上传到Linux jdk-8u171-linux-x64.tar.gz
+2、解压安装包,命令为tar -zxvf jdk-8u171-linux-x64.tar.gz -C /usr/local
+3、配置环境变量,使用vim命令修改/etc/profile文件,在文件末尾加入如下配置
+JAVA_HOME=/usr/local/jdk1.8.0_171
+PATH=$JAVA_HOME/bin:$PATH
+4、重新加载profile文件,使更改的配置立即生效,命令为source /etc/profile
+5、检查安装是否成功,命令为java -version<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="安装MySQL"><a href="#安装MySQL" class="headerlink" title="安装MySQL"></a>安装MySQL</h4><p>RPM（Red-Hat Package Manager）RPM软件包管理工具，是红帽Linux用于管理和按章软件的工具。</p>
+<h5 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h5><pre class="line-numbers language-none"><code class="language-none">1.卸载与mysql冲突的mariadb数据库（centos自带）
 2.安装mysql<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
-<h4 id="操作"><a href="#操作" class="headerlink" title="操作"></a>操作</h4><h5 id="1-卸载软件"><a href="#1-卸载软件" class="headerlink" title="1.卸载软件"></a>1.卸载软件</h5><p>注意：</p>
+<h5 id="操作"><a href="#操作" class="headerlink" title="操作"></a>操作</h5><h6 id="1-卸载软件"><a href="#1-卸载软件" class="headerlink" title="1.卸载软件"></a>1.卸载软件</h6><p>注意：</p>
 <ol>
 <li>如果安装系统中已经安装有MySQL数据库，安装将失败，</li>
 <li>CentOS自带mariadb，与MySQL数据库冲突，安装也会失败。</li>
@@ -588,7 +607,7 @@ files：要打包的文件
 
 <p>遇到某些软件弹出无法运行，其实是缺少c++运行环境</p>
 <p><a target="_blank" rel="noopener" href="https://www.aliyundrive.com/s/WLnhdAdwCzh">软件下载</a></p>
-<h5 id="2-开始安装"><a href="#2-开始安装" class="headerlink" title="2.开始安装"></a>2.开始安装</h5><ol>
+<h6 id="2-开始安装"><a href="#2-开始安装" class="headerlink" title="2.开始安装"></a>2.开始安装</h6><ol>
 <li>上传mysql安装包</li>
 </ol>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">yum <span class="token function">install</span> lrzsz	<span class="token comment">#安装上传文件的工具</span>
@@ -1326,7 +1345,7 @@ systemctl status firewalld		#查看防火墙状态<span aria-hidden="true" class
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             
-                <span id="year">2019-2022</span>
+                <span id="year">2019-2023</span>
             
             <a href="/about" target="_blank">独角兽</a>
             |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
@@ -1334,7 +1353,7 @@ systemctl status firewalld		#查看防火墙状态<span aria-hidden="true" class
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">8.4k</span>
+                        class="white-color">9.3k</span>
             
             
             

@@ -389,21 +389,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-11-24
+                    2022-12-06
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2.7k
+                    3.3k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    12 分
+                    15 分
                 </div>
                 
 
@@ -886,9 +886,7 @@ shardingsphere:
 main:
   allow-bean-definition-overriding: true<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h4 id="Nginx学习（Linux环境）"><a href="#Nginx学习（Linux环境）" class="headerlink" title="Nginx学习（Linux环境）"></a>Nginx学习（Linux环境）</h4><p>思路</p>
-<p>安装过程</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token number">1</span>.yum <span class="token parameter variable">-y</span> <span class="token function">install</span> gcc pcre-devel zlib-devel openssl openssl-devel	<span class="token comment">#安装依赖包 </span>
+<h4 id="Nginx学习（Linux环境）"><a href="#Nginx学习（Linux环境）" class="headerlink" title="Nginx学习（Linux环境）"></a>Nginx学习（Linux环境）</h4><h5 id="思路-2"><a href="#思路-2" class="headerlink" title="思路"></a>思路</h5><h6 id="安装过程"><a href="#安装过程" class="headerlink" title="安装过程"></a>安装过程</h6><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token number">1</span>.yum <span class="token parameter variable">-y</span> <span class="token function">install</span> gcc pcre-devel zlib-devel openssl openssl-devel	<span class="token comment">#安装依赖包 </span>
 <span class="token number">2</span>.weget http://nginx.org/download/nginx-1.16.1.tar.gz	<span class="token comment">#下载Nginx安装包</span>
 <span class="token number">3</span>.tar <span class="token parameter variable">-zxvf</span> nginx-1.16.1.tar.gz		<span class="token comment">#解压</span>
 <span class="token number">4</span>.cd nginx-1.16.1
@@ -906,8 +904,7 @@ sbin/nginx <span class="token parameter variable">-t</span>	<span class="token c
 <span class="token comment">#配置文件</span>
 ./nginx <span class="token parameter variable">-s</span> reload	<span class="token comment">#修改配置文件后，需要重新加载才能生效</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p>添加到环境变量</p>
-<pre class="line-numbers language-none"><code class="language-none">vim /etc/profile
+<h6 id="添加到环境变量"><a href="#添加到环境变量" class="headerlink" title="添加到环境变量"></a>添加到环境变量</h6><pre class="line-numbers language-none"><code class="language-none">vim /etc/profile
 PATH=/usr/local/nginx/sbin
 source /etc/profile
 
@@ -915,6 +912,114 @@ source /etc/profile
 添加完环境变量之后，大部分命令使用不了了。
 解决办法：修改profile文件，将path修改成下列
 PATH/usr/local/nginx/sbin:$PATH<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h6 id="部署项目"><a href="#部署项目" class="headerlink" title="部署项目"></a>部署项目</h6><pre class="line-numbers language-none"><code class="language-none">nginx.conf整体结构介绍
+全局块		和nginx运行相关的全局配置
+events块		和网络连接相关的配置
+http快		代理、缓存、日志记录、虚拟主机配置
+	http全局块
+	server块
+		server全局块
+		location块
+		
+注意：http块中剋配置多个server块，server块中可以配置多个location块
+
+只需将文件导入到html文件夹即可。具体yuanyin在nginx.conf中
+
+#遇到的问题
+如果html文件有中文会出现乱码问题
+在server全局快中添加charset utf-8;
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h6 id="反向代理"><a href="#反向代理" class="headerlink" title="反向代理"></a>反向代理</h6><p>负载均衡（轮询）</p>
+<pre class="line-numbers language-none"><code class="language-none">upstream targetserver{
+	server 192.168.217.145:8080;
+	server 192.168.217.145:8081;
+ }
+ server{
+	listen 8080;
+	server_name localhost;
+	location /{
+		proxy_pass http://targetserver;
+}
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="swagger学习"><a href="#swagger学习" class="headerlink" title="swagger学习"></a>swagger学习</h4><pre class="line-numbers language-none"><code class="language-none">操作步骤:
+1、导入knife4j的maven坐标
+2、导入knife4j相关配置类
+3、设置静态资源,否则接口文档页面无法访问
+4、在LoginChegkFilter中设置不需要处理的请求路径<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-none"><code class="language-none">1、导入knife4j的maven坐标
+&lt;dependency&gt;
+&lt;groupId&gt;com.github.xiaoymin&lt;/groupId&gt;
+&lt;artifactId&gt;knife4j-spring-boot-starter&lt;/artifactId&gt;
+&lt;version&gt;3.0.2&lt;/version&gt;
+&lt;/dependency&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-none"><code class="language-none">2、导入knife4j相关配置类
+在webMvcConfig中添加注解
+@EnableSwagger2
+@EnableKnife4j
+创建两个方法
+
+文件地址https://www.aliyundrive.com/s/BmG7We8p3La
+需要注意的地方
+1.导入映射
+2.创建的两个方法中，注意controller的位置
+				 注意项目描述<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="前后端分离"><a href="#前后端分离" class="headerlink" title="前后端分离"></a>前后端分离</h4><p>部署环境</p>
+<pre class="line-numbers language-none"><code class="language-none">服务器:
+192.168.217.144 (服务器A)
+	Nginx:部署前端项目、配置反向代理
+	Mygql:主从复制结构中的主库
+
+192.168.217.145 (服务器B)
+	jdk:运行Java项目
+	git:版本控制工具
+	maven:项目构建工具
+	jar: Spring Boot项目打成jar包基于内置Tomcat运行
+	Mysql:主从复制结构中的从库
+192.168.1.104 (服务器C)
+	Redis:缓存中间件<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>服务器A</p>
+<pre class="line-numbers language-none"><code class="language-none">1.将前端项目dist传到服务器A
+2.修改nginx.conf文件
+ server {
+        listen       80;
+        server_name  localhost;
+        charset utf-8;
+        #charset koi8-r;
+
+        #access_log  logs/host.access.log  main;
+
+        location / {
+            root   html/dist;
+            index  index.html;
+        }
+
+        #构造反向代理
+        location ^~ /api/ {
+            rewrite ^/api/(.*)$ /$1 break;
+            proxy_pass http://192.168.217.145:8080;
+}
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>服务器B</p>
+<pre class="line-numbers language-none"><code class="language-none">安装jdk,git,maven,MySQL,使用git克隆代码<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+
+
+<p>快速启动</p>
+<pre class="line-numbers language-none"><code class="language-none">启动主库，从库
+
+启动redis
+
+启动idea<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
                 
@@ -1576,7 +1681,7 @@ PATH/usr/local/nginx/sbin:$PATH<span aria-hidden="true" class="line-numbers-rows
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             
-                <span id="year">2019-2022</span>
+                <span id="year">2019-2023</span>
             
             <a href="/about" target="_blank">独角兽</a>
             |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
@@ -1584,7 +1689,7 @@ PATH/usr/local/nginx/sbin:$PATH<span aria-hidden="true" class="line-numbers-rows
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">8.4k</span>
+                        class="white-color">9.3k</span>
             
             
             
