@@ -1,0 +1,456 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>简</title>
+  
+  <subtitle>简</subtitle>
+  <link href="http://uvucunicorn.github.io/atom.xml" rel="self"/>
+  
+  <link href="http://uvucunicorn.github.io/"/>
+  <updated>2023-03-07T10:01:53.074Z</updated>
+  <id>http://uvucunicorn.github.io/</id>
+  
+  <author>
+    <name>简</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>【java学习】自动装箱与自动拆箱</title>
+    <link href="http://uvucunicorn.github.io/2023/03/07/java-xue-xi-zi-dong-zhuang-xiang-yu-zi-dong-chai-xiang/"/>
+    <id>http://uvucunicorn.github.io/2023/03/07/java-xue-xi-zi-dong-zhuang-xiang-yu-zi-dong-chai-xiang/</id>
+    <published>2023-03-07T10:01:53.000Z</published>
+    <updated>2023-03-07T10:01:53.074Z</updated>
+    
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>有道词典反爬的破解的实践</title>
+    <link href="http://uvucunicorn.github.io/2023/03/07/you-dao-ci-dian-fan-pa-de-po-jie-de-shi-jian/"/>
+    <id>http://uvucunicorn.github.io/2023/03/07/you-dao-ci-dian-fan-pa-de-po-jie-de-shi-jian/</id>
+    <published>2023-03-07T09:50:39.000Z</published>
+    <updated>2023-03-07T10:25:22.114Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;有道词典反爬的破解的实践&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#有道词典反爬的破解的实践&quot;&gt;#&lt;/a&gt; 有道词典反爬的破解的实践&lt;/h1&gt;
+&lt;p&gt;原文章:&lt;a</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>初学c++</title>
+    <link href="http://uvucunicorn.github.io/2023/03/07/chu-xue-c/"/>
+    <id>http://uvucunicorn.github.io/2023/03/07/chu-xue-c/</id>
+    <published>2023-03-07T08:07:21.000Z</published>
+    <updated>2023-03-07T08:07:39.658Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;c基础入门&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#c基础入门&quot;&gt;#&lt;/a&gt; C++ 基础入门&lt;/h1&gt;
+&lt;h2 id=&quot;1-c初识根据黑马视频入门&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot;</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Docker学习</title>
+    <link href="http://uvucunicorn.github.io/2023/01/13/docker-xue-xi/"/>
+    <id>http://uvucunicorn.github.io/2023/01/13/docker-xue-xi/</id>
+    <published>2023-01-13T04:01:23.000Z</published>
+    <updated>2023-01-13T04:01:44.201Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;docker学习&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#docker学习&quot;&gt;#&lt;/a&gt; Docker 学习&lt;/h3&gt;
+&lt;pre class=&quot;line-numbers language-none&quot;&gt;&lt;code</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>github pro相关</title>
+    <link href="http://uvucunicorn.github.io/2022/12/07/github-pro-xiang-guan/"/>
+    <id>http://uvucunicorn.github.io/2022/12/07/github-pro-xiang-guan/</id>
+    <published>2022-12-07T07:20:53.000Z</published>
+    <updated>2022-12-07T11:15:58.191Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;colicate&lt;/p&gt;
+&lt;p&gt;在登陆账户的时候，报错无法登录 github 账号&lt;/p&gt;
+&lt;p&gt;解决办法是配置 idea http</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>1块钱注册ChatGPT</title>
+    <link href="http://uvucunicorn.github.io/2022/12/06/1-kuai-qian-zhu-ce-chatgpt/"/>
+    <id>http://uvucunicorn.github.io/2022/12/06/1-kuai-qian-zhu-ce-chatgpt/</id>
+    <published>2022-12-06T03:59:35.000Z</published>
+    <updated>2023-03-16T07:53:54.007Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;1块钱注册chatgpt&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#1块钱注册chatgpt&quot;&gt;#&lt;/a&gt; 1 块钱注册 ChatGPT&lt;/h1&gt;
+&lt;h2 id=&quot;1注册&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot;</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Git学习</title>
+    <link href="http://uvucunicorn.github.io/2022/11/19/git-xue-xi/"/>
+    <id>http://uvucunicorn.github.io/2022/11/19/git-xue-xi/</id>
+    <published>2022-11-19T06:25:35.000Z</published>
+    <updated>2022-11-19T06:26:17.123Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;git学习&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#git学习&quot;&gt;#&lt;/a&gt; Git 学习&lt;/h3&gt;
+&lt;p&gt;三个区&lt;/p&gt;
+&lt;pre class=&quot;line-numbers language-none&quot;&gt;&lt;code</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Redis学习</title>
+    <link href="http://uvucunicorn.github.io/2022/11/18/redis-xue-xi/"/>
+    <id>http://uvucunicorn.github.io/2022/11/18/redis-xue-xi/</id>
+    <published>2022-11-18T05:31:33.000Z</published>
+    <updated>2022-11-18T05:32:21.688Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;redis学习&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#redis学习&quot;&gt;#&lt;/a&gt; Redis 学习&lt;/h3&gt;
+&lt;p&gt;字符串 string 操作命令&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;set key value    设置</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Vue学习</title>
+    <link href="http://uvucunicorn.github.io/2022/11/18/vue-xue-xi/"/>
+    <id>http://uvucunicorn.github.io/2022/11/18/vue-xue-xi/</id>
+    <published>2022-11-17T16:13:18.000Z</published>
+    <updated>2022-11-17T16:27:00.166Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;vue学习&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#vue学习&quot;&gt;#&lt;/a&gt; Vue 学习&lt;/h3&gt;
+&lt;p&gt;如何运行别人的项目&lt;/p&gt;
+&lt;p&gt;1. 全局配置&lt;/p&gt;
+&lt;pre class=&quot;line-numbers</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Linux学习</title>
+    <link href="http://uvucunicorn.github.io/2022/11/18/linux-xue-xi/"/>
+    <id>http://uvucunicorn.github.io/2022/11/18/linux-xue-xi/</id>
+    <published>2022-11-17T16:13:03.000Z</published>
+    <updated>2022-12-08T06:41:49.888Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;linux学习&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#linux学习&quot;&gt;#&lt;/a&gt; Linux 学习&lt;/h3&gt;
+&lt;h4 id=&quot;网卡设置&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot;</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>uvHealthy健康管理项目</title>
+    <link href="http://uvucunicorn.github.io/2022/11/07/ruvhealthy-jian-kang-guan-li-xiang-mu/"/>
+    <id>http://uvucunicorn.github.io/2022/11/07/ruvhealthy-jian-kang-guan-li-xiang-mu/</id>
+    <published>2022-11-07T13:09:53.000Z</published>
+    <updated>2022-11-08T11:50:12.334Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;ruvhealthy健康管理项目&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#ruvhealthy健康管理项目&quot;&gt;#&lt;/a&gt; RuvHealthy</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>30天自制操作系统</title>
+    <link href="http://uvucunicorn.github.io/2022/11/03/30-tian-zi-zhi-cao-zuo-xi-tong/"/>
+    <id>http://uvucunicorn.github.io/2022/11/03/30-tian-zi-zhi-cao-zuo-xi-tong/</id>
+    <published>2022-11-03T15:49:58.000Z</published>
+    <updated>2022-11-07T14:29:14.712Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;30天自制操作系统&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#30天自制操作系统&quot;&gt;#&lt;/a&gt; 30 天自制操作系统&lt;/h2&gt;
+&lt;p&gt;天数根据书中写的。&lt;/p&gt;
+&lt;p&gt;自己的博客还是按自己想法写舒服。&lt;/p&gt;
+&lt;h3</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Windows开机自启设置和Typora快捷键</title>
+    <link href="http://uvucunicorn.github.io/2022/10/10/windows-kai-ji-zi-qi-she-zhi-he-typora-kuai-jie-jian/"/>
+    <id>http://uvucunicorn.github.io/2022/10/10/windows-kai-ji-zi-qi-she-zhi-he-typora-kuai-jie-jian/</id>
+    <published>2022-10-10T15:25:20.000Z</published>
+    <updated>2023-03-14T05:59:19.352Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;windows开机自启设置和typora快捷键&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#windows开机自启设置和typora快捷键&quot;&gt;#&lt;/a&gt; Windows 开机自启设置和 Typora 快捷键&lt;/h2&gt;
+&lt;h3</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>SpringBoot学习</title>
+    <link href="http://uvucunicorn.github.io/2022/10/09/springboot-xue-xi/"/>
+    <id>http://uvucunicorn.github.io/2022/10/09/springboot-xue-xi/</id>
+    <published>2022-10-09T14:02:29.000Z</published>
+    <updated>2022-10-09T14:50:46.732Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;springboot学习时遇到的问题&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#springboot学习时遇到的问题&quot;&gt;#&lt;/a&gt; SpringBoot 学习时遇到的问题&lt;/h2&gt;
+&lt;h3</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>搭建个人博客_Hexo_tangyuxian</title>
+    <link href="http://uvucunicorn.github.io/2022/10/09/da-jian-ge-ren-bo-ke-hexo-tangyuxian/"/>
+    <id>http://uvucunicorn.github.io/2022/10/09/da-jian-ge-ren-bo-ke-hexo-tangyuxian/</id>
+    <published>2022-10-09T13:58:16.000Z</published>
+    <updated>2023-03-26T14:11:36.572Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;搭建个人博客-_hexo_tangyuxian&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#搭建个人博客-_hexo_tangyuxian&quot;&gt;#&lt;/a&gt; 搭建个人博客 _Hexo_tangyuxian&lt;/h2&gt;
+&lt;h2</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>部署项目到Linux服务器</title>
+    <link href="http://uvucunicorn.github.io/2022/10/05/bu-shu-xiang-mu-dao-linux-fu-wu-qi/"/>
+    <id>http://uvucunicorn.github.io/2022/10/05/bu-shu-xiang-mu-dao-linux-fu-wu-qi/</id>
+    <published>2022-10-05T10:27:41.000Z</published>
+    <updated>2022-10-09T14:55:59.653Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;部署项目到linux服务器&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#部署项目到linux服务器&quot;&gt;#&lt;/a&gt; 部署项目到 Linux 服务器&lt;/h2&gt;
+&lt;h3 id=&quot;1前端项目部署到github&quot;&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>smart-store项目搭建</title>
+    <link href="http://uvucunicorn.github.io/2022/10/05/smart-store-xiang-mu-da-jian/"/>
+    <id>http://uvucunicorn.github.io/2022/10/05/smart-store-xiang-mu-da-jian/</id>
+    <published>2022-10-05T05:36:28.000Z</published>
+    <updated>2023-04-01T08:55:45.886Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;smart-store项目搭建&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#smart-store项目搭建&quot;&gt;#&lt;/a&gt; Smart-Store 项目搭建&lt;/h1&gt;
+&lt;h2 id=&quot;1后台系统业务功能开发&quot;&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>clash与shadowsowrocket进阶教程</title>
+    <link href="http://uvucunicorn.github.io/2022/10/05/clash-yu-shadowsowrocket-jin-jie-jiao-cheng/"/>
+    <id>http://uvucunicorn.github.io/2022/10/05/clash-yu-shadowsowrocket-jin-jie-jiao-cheng/</id>
+    <published>2022-10-05T05:15:06.000Z</published>
+    <updated>2022-10-09T15:09:24.610Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;clash与shadowrocket&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#clash与shadowrocket&quot;&gt;#&lt;/a&gt; Clash 与 Shadowrocket&lt;/h2&gt;
+&lt;h3 id=&quot;1clash&quot;&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Chales抓包_羊了个羊</title>
+    <link href="http://uvucunicorn.github.io/2022/09/18/chales-zhua-bao-yang-liao-ge-yang/"/>
+    <id>http://uvucunicorn.github.io/2022/09/18/chales-zhua-bao-yang-liao-ge-yang/</id>
+    <published>2022-09-18T02:47:31.000Z</published>
+    <updated>2023-03-02T02:28:48.159Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;chales抓包_羊了个羊&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#chales抓包_羊了个羊&quot;&gt;#&lt;/a&gt; Chales 抓包_羊了个羊&lt;/h3&gt;
+&lt;h5 id=&quot;打开charles的代理和手机平板上的代理&quot;&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="http://uvucunicorn.github.io/2022/09/17/hello-world/"/>
+    <id>http://uvucunicorn.github.io/2022/09/17/hello-world/</id>
+    <published>2022-09-17T08:46:54.623Z</published>
+    <updated>2022-09-17T08:46:54.623Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt;</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+</feed>
